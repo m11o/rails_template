@@ -21,6 +21,15 @@ if yes?('Would you like to install whenever?')
   run 'wheneverize .' # wheneverの初期ファイルを作成
 end
 
+if yes?('Would you like to install ridgepole?')
+  get 'ridgepole'
+
+  # ridgepoleの設定ファイルを追加
+  create_file 'db/Schemafile'
+  # ridgepoleの実行コマンド実装
+  get "#{REPO_URL}/lib/tasks/ridgepole.rake", 'lib/tasks/ridgepole.rake'
+end
+
 gem_group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
