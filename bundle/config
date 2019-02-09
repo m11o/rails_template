@@ -2,4 +2,4 @@
 BUNDLE_PATH: "vendor/bundle"
 # なぜこれをつけるのかちゃんと理解できていない。
 # ただこれがないとmysql2のbundle installでこける
-BUNDLE_BUILD__MYSQL2: "-L/usr/local/opt/openssl/lib --with-opt-include=-I/usr/local/opt/openssl/include"
+BUNDLE_BUILD__MYSQL2: "--with-ldflags=-L/usr/local/opt/openssl/lib --with-cppflags=-I/usr/local/opt/openssl/include"
