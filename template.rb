@@ -1,4 +1,4 @@
-REPO_URL = "https://github.com/m11o/rails_template/master"
+REPO_URL = "https://raw.githubusercontent.com/m11o/rails_template/master"
 
 @app_name = app_name
 
