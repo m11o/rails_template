@@ -18,7 +18,7 @@ gem 'mysql2'
 
 if yes?('Would you like to install whenever?')
   gem 'whenever', require: false
-  create_file "config/schedule.rb"
+  run 'wheneverize .' # wheneverの初期ファイルを作成
 end
 
 gem_group :development, :test do
