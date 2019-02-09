@@ -2,8 +2,8 @@ REPO_URL = "https://github.com/m11o/rails_template/master"
 
 @app_name = app_name
 
-def get_and_gsub(source_path, local_path)
-  get source_path, local_path
+def get_and_gsub(remote_path, local_path)
+  get remote_path, local_path
 
   gsub_file local_path, /\{\{app_name\}\}/, @app_name
   gsub_file local_path, /\{\{UPCASE_APP_NAME\}\}/, @app_name.upcase
