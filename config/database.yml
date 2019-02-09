@@ -1,0 +1,31 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: 5
+  username: root
+  password: <%= ENV['{{UPCASE_APP_NAME}}_LOCAL_DATABASE_PASSWORD'] %>
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: {{app_name}}_development
+  host: <%= ENV['DB_HOST'] || 'localhost'%>
+
+test:
+  <<: *default
+  database: {{app_name}}_test
+  host: <%= ENV['DB_HOST'] || 'localhost'%>
+
+staging:
+  <<: *default
+  database: {{app_name}}_staging
+  username: <%= ENV['{{UPCASE_APP_NAME}}_STAGING_DATABASE_USER'] %>
+  password: <%= ENV['{{UPCASE_APP_NAME}}_STAGING_DATABASE_PASSWORD'] %>
+  host: <%= ENV['{{UPCASE_APP_NAME}}_STAGING_DATABASE_HOST'] %>
+
+production:
+  <<: *default
+  database: {{app_name}}_production
+  username: <%= ENV['{{UPCASE_APP_NAME}}_PRODUCTION_DATABASE_USER'] %>
+  password: <%= ENV['{{UPCASE_APP_NAME}}_PRODUCTION_DATABASE_PASSWORD'] %>
+  host: <%= ENV['{{UPCASE_APP_NAME}}_PRODUCTION_DATABASE_HOST'] %>
