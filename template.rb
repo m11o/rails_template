@@ -73,6 +73,9 @@ get_and_gsub "#{REPO_URL}/config/database.yml", 'config/database.yml'
 
 run 'rm -rf test'
 
+# bundle install
+run 'bundle install --path vender/bundle'
+
 # rspec
 generate 'rspec:install'
 
