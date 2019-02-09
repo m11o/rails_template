@@ -1,7 +1,5 @@
 REPO_URL = "https://github.com/m11o/rails_template/master"
 
-gems = {}
-
 @app_name = app_name
 
 def get_and_gsub(source_path, local_path)
@@ -18,8 +16,9 @@ gem 'config'
 gem 'slim-rails'
 gem 'mysql2'
 
-if gems[:whenever] = yes?('Would you like to install whenever?')
+if yes?('Would you like to install whenever?')
   gem 'whenever', require: false
+  create_file "config/schedule.rb"
 end
 
 gem_group :development, :test do
@@ -58,10 +57,6 @@ get "#{REPO_URL}/gitignore", '.gitignore'
 
 # locales/ja.yml
 get "https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/ja.yml", "config/locales/ja.yml"
-
-if gems[:whenever]
-  create_file "config/schedule.rb"
-end
 
 # database.yml
 remove_file 'config/database.yml'
