@@ -42,7 +42,7 @@ gem_group :development do
   gem 'annotate'
 end
 
-group :test do
+gem_group :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
