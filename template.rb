@@ -22,7 +22,7 @@ if yes?('Would you like to install whenever?')
 end
 
 if yes?('Would you like to install ridgepole?')
-  get 'ridgepole'
+  gem 'ridgepole'
 
   # ridgepoleの設定ファイルを追加
   create_file 'db/Schemafile'
