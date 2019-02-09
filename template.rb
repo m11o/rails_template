@@ -75,4 +75,4 @@ generate 'rails_config:install'
 
 git :init
 git :add => '.'
-git :commit => '-am "Initial commit"'
+git :commit => '-am "init commit"'
