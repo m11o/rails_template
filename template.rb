@@ -74,7 +74,7 @@ get_and_gsub "#{REPO_URL}/config/database.yml", 'config/database.yml'
 run 'rm -rf test'
 
 # bundle install
-bundle config --local build.mysql2 "--with-ldflags=-L/usr/local/opt/openssl/lib --with-cppflags=-I/usr/local/opt/openssl/include"
+run 'bundle config --local build.mysql2 "--with-ldflags=-L/usr/local/opt/openssl/lib --with-cppflags=-I/usr/local/opt/openssl/include"'
 run 'bundle install --path vendor/bundle'
 
 # rspec
