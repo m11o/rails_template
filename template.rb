@@ -71,6 +71,9 @@ get "https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/ja.yml", "
 remove_file 'config/database.yml'
 get_and_gsub "#{REPO_URL}/config/database.yml", 'config/database.yml'
 
+# .rubocop.yml
+get "https://raw.githubusercontent.com/rails/rails/master/.rubocop.yml", '.rubocop.yml'
+
 run 'rm -rf test'
 
 # bundle install
