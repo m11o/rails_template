@@ -77,6 +77,7 @@ get "https://raw.githubusercontent.com/rails/rails/master/.rubocop.yml", '.ruboc
 run 'rm -rf test'
 
 # bundle install
+get "#{REPO_URL}/bundle/config", '.bundle/config'
 run 'bundle install --path vendor/bundle'
 
 # rspec
