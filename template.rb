@@ -78,7 +78,7 @@ run 'rm -rf test'
 
 # bundle install
 get "#{REPO_URL}/bundle/config", '.bundle/config'
-run 'bundle install --path vendor/bundle'
+run 'bundle install --path=vendor/bundle'
 
 # rspec
 generate 'rspec:install'
