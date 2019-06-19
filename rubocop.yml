@@ -1,0 +1,2 @@
+inherit_from:
+  - https://raw.githubusercontent.com/m11o/m11o_rubocop/master/.rubocop.yml
